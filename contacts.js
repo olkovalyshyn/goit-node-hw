@@ -52,6 +52,9 @@ function addContact(name, email, phone) {
       };
 
       const newBase = [...parsedData, newContact];
+
+      fs.writeFile(contactsPath, JSON.stringify(newBase), "utf-8");
+
       console.table(newBase);
     });
   } catch (error) {
